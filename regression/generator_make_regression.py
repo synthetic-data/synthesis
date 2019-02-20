@@ -1,5 +1,11 @@
 """
 Generating data with datasets.make_regression function
+
+It creates a linear model y = w*X + b, then generates
+'outputs' y and adds noise to X.
+
+https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression
+
 """
 
 import numpy as np
@@ -23,6 +29,12 @@ X, y = skds.make_regression(
                         # The number of regression targets, i.e., the
                         # dimension of the y output vector associated
                         # with a sample. By default, a scalar.
+    bias=0.5,           # float, optional (default=0.0)
+                        # The bias term in the underlying linear model.
+    effective_rank=None,# the 'approximate' effective rank of the input
+                        # matrix. If None the input set is 'well
+                        # conditioned, centered and Gaussian with unit
+                        # variance.
     noise=.001)         # what _exactly_ is this?
 
 print(X, "\n")
