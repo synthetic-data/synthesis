@@ -75,5 +75,6 @@ of the linear model so it shifts the picture by the same number of units
 
 What I don't understand is: why not define the coefficients of the linear
 model? Why not let scale the output? 
-Technical: I tried to output the coefficients of the linear 
+
+Caught the constant of the linear model, finally.
 """
