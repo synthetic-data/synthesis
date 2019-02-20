@@ -6,6 +6,7 @@ It creates a linear model y = w*X + b, then generates
 
 https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression
 
+https://github.com/scikit-learn/scikit-learn/tree/master/sklearn/datasets
 """
 
 #import numpy as np
