@@ -23,7 +23,7 @@ from sklearn import datasets as skds
 # the _generated_ y matrix is called 'targets'
 
 X, y = skds.make_regression(
-    n_samples=100,       # integer, default = 100
+    n_samples=10,       # integer, default = 100
     n_features=1,       # integer, default = 100
     n_informative=1,    # integer, default = 10
                         # the number of features used to build the linear
