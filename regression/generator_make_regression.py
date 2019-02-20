@@ -23,7 +23,7 @@ from sklearn import datasets as skds
 # the _generated_ y matrix is called 'targets'
 
 X, y = skds.make_regression(
-    n_samples=3,       # integer, default = 100
+    n_samples=100,       # integer, default = 100
     n_features=1,       # integer, default = 100
     n_informative=1,    # integer, default = 10
                         # the number of features used to build the linear
@@ -32,7 +32,7 @@ X, y = skds.make_regression(
                         # The number of regression targets, i.e., the
                         # dimension of the y output vector associated
                         # with a sample. By default, a scalar.
-    bias=1.0,           # float, optional (default=0.0) "b" of the LM?
+    bias=0.0,           # float, optional (default=0.0) in units of y
                         # The bias term in the underlying linear model.
     effective_rank=None,# the 'approximate effective' rank of the input
                         # matrix. If None the input set is 'well
@@ -44,8 +44,7 @@ X, y = skds.make_regression(
                         # effective_rank is not None.
     noise=0.0,          # the standard deviation of Gaussian noise, added
                         # to the output - y.
-    coef=True,          # outputs the coefficients of the linear model.
-    random_state=123)   # the seed-like integer for reproducibility
+    random_state=1)     # the seed-like integer for reproducibility
 
 print(X, "\n")
 print(y, "\n")
