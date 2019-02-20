@@ -6,6 +6,7 @@ It creates a linear model y = w*X + b, then generates
 
 https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression
 
+https://github.com/scikit-learn/scikit-learn/tree/master/sklearn/datasets
 """
 
 #import numpy as np
@@ -22,8 +23,8 @@ from sklearn import datasets as skds
 # the _generated_ X matrix is called 'inputs'
 # the _generated_ y matrix is called 'targets'
 
-X, y = skds.make_regression(
-    n_samples=100,       # integer, default = 100
+X, y, C = skds.make_regression(
+    n_samples=10,       # integer, default = 100
     n_features=1,       # integer, default = 100
     n_informative=1,    # integer, default = 10
                         # the number of features used to build the linear
@@ -44,13 +45,14 @@ X, y = skds.make_regression(
                         # effective_rank is not None.
     noise=0.0,          # the standard deviation of Gaussian noise, added
                         # to the output - y.
-#   coef=True,          # boolean, optional (default=False)
+    coef=True,          # boolean, optional (default=False)
                         #   If True, the coefficients of the underlying
                         #   linear model are returned.
     random_state=789)   # the seed-like integer for reproducibility
 
 print(X, "\n")
 print(y, "\n")
+print(C, "\n")
 
 # reshape?
 if (y.ndim == 1):
@@ -69,10 +71,11 @@ the "features" are generated to be Gaussian and "centered" (around zero)
 and having a standard deviation of 1, which means that they can be positive, 
 negative and are potentially unlimited. This fake 'input' is put through
 a linear model generated in a way that a standart deviation of 1 would 
-transform into a 'target' of approximately 100. The 'bias' is the "b" term
+transform into a 'target' with value C . The 'bias' is the "b" term
 of the linear model so it shifts the picture by the same number of units
 
 What I don't understand is: why not define the coefficients of the linear
 model? Why not let scale the output? 
-Technical: I tried to output the coefficients of the linear 
+
+Caught the constant of the linear model, finally.
 """
