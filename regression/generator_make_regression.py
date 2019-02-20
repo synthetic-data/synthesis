@@ -14,11 +14,16 @@ from sklearn import datasets as skds
 
 # the function make_regression returns a tuple
 X, y = skds.make_regression(
-    n_samples=200,
-    n_features=1,
-    n_informative=1,
-    n_targets=1,
-    noise=20.0)
+    n_samples=4,        # integer, default = 100
+    n_features=1,       # integer, default = 100
+    n_informative=1,    # integer, default = 10
+                        # the number of features used to build the linear
+                        # model used to generate the output.
+    n_targets=1,        # integer, default = 1
+                        # The number of regression targets, i.e., the
+                        # dimension of the y output vector associated
+                        # with a sample. By default, a scalar.
+    noise=.001)         # what _exactly_ is this?
 
 print(X, "\n")
 print(y, "\n")
