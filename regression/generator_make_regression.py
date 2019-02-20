@@ -23,7 +23,7 @@ from sklearn import datasets as skds
 # the _generated_ y matrix is called 'targets'
 
 X, y = skds.make_regression(
-    n_samples=10,       # integer, default = 100
+    n_samples=3,       # integer, default = 100
     n_features=1,       # integer, default = 100
     n_informative=1,    # integer, default = 10
                         # the number of features used to build the linear
@@ -32,7 +32,7 @@ X, y = skds.make_regression(
                         # The number of regression targets, i.e., the
                         # dimension of the y output vector associated
                         # with a sample. By default, a scalar.
-    bias=1.0,           # float, optional (default=0.0)
+    bias=1.0,           # float, optional (default=0.0) "b" of the LM?
                         # The bias term in the underlying linear model.
     effective_rank=None,# the 'approximate effective' rank of the input
                         # matrix. If None the input set is 'well
@@ -44,6 +44,7 @@ X, y = skds.make_regression(
                         # effective_rank is not None.
     noise=0.0,          # the standard deviation of Gaussian noise, added
                         # to the output - y.
+    coef=True,          # outputs the coefficients of the linear model.
     random_state=123)   # the seed-like integer for reproducibility
 
 print(X, "\n")
@@ -58,3 +59,11 @@ plt.figure(figsize=(14,8))
 plt.plot(X,y,'b.')
 plt.title('The Synthetic Dataset')
 plt.show()
+
+"""
+Now I understand.
+the "features" are generated to be Gaussian and"centered" around zero and
+having a standard deviation of 1, which means that they can be positive, 
+negative and are potentially unlimited. This fake 'input' is put through
+a linear model generated in a way that a standart deviation of 1 would 
+"""
