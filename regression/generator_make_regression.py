@@ -70,7 +70,7 @@ the "features" are generated to be Gaussian and "centered" (around zero)
 and having a standard deviation of 1, which means that they can be positive, 
 negative and are potentially unlimited. This fake 'input' is put through
 a linear model generated in a way that a standart deviation of 1 would 
-transform into a 'target' of approximately 100. The 'bias' is the "b" term
+transform into a 'target' with value C . The 'bias' is the "b" term
 of the linear model so it shifts the picture by the same number of units
 
 What I don't understand is: why not define the coefficients of the linear
