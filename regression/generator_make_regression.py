@@ -22,8 +22,8 @@ from sklearn import datasets as skds
 # the _generated_ X matrix is called 'inputs'
 # the _generated_ y matrix is called 'targets'
 
-X, y = skds.make_regression(
-    n_samples=100,       # integer, default = 100
+X, y, C = skds.make_regression(
+    n_samples=10,       # integer, default = 100
     n_features=1,       # integer, default = 100
     n_informative=1,    # integer, default = 10
                         # the number of features used to build the linear
@@ -44,13 +44,14 @@ X, y = skds.make_regression(
                         # effective_rank is not None.
     noise=0.0,          # the standard deviation of Gaussian noise, added
                         # to the output - y.
-#   coef=True,          # boolean, optional (default=False)
+    coef=True,          # boolean, optional (default=False)
                         #   If True, the coefficients of the underlying
                         #   linear model are returned.
     random_state=789)   # the seed-like integer for reproducibility
 
 print(X, "\n")
 print(y, "\n")
+print(C, "\n")
 
 # reshape?
 if (y.ndim == 1):
