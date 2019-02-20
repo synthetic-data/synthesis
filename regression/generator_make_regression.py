@@ -19,8 +19,11 @@ import sklearn as sk
 from sklearn import datasets as skds
 
 # the function make_regression returns a tuple
+# the _generated_ X matrix is called 'inputs'
+# the _generated_ y matrix is called 'targets'
+
 X, y = skds.make_regression(
-    n_samples=4,        # integer, default = 100
+    n_samples=10,       # integer, default = 100
     n_features=1,       # integer, default = 100
     n_informative=1,    # integer, default = 10
                         # the number of features used to build the linear
@@ -29,20 +32,26 @@ X, y = skds.make_regression(
                         # The number of regression targets, i.e., the
                         # dimension of the y output vector associated
                         # with a sample. By default, a scalar.
-    bias=0.5,           # float, optional (default=0.0)
+    bias=1.0,           # float, optional (default=0.0)
                         # The bias term in the underlying linear model.
-    effective_rank=None,# the 'approximate' effective rank of the input
+    effective_rank=None,# the 'approximate effective' rank of the input
                         # matrix. If None the input set is 'well
                         # conditioned, centered and Gaussian with unit
                         # variance.
-    noise=.001)         # what _exactly_ is this?
+    tail_strength=0.5,  # float between 0.0 and 1.0, optional (default=0.5)
+                        # The relative importance of the fat noisy tail
+                        # of the singular values profile if
+                        # effective_rank is not None.
+    noise=0.0,          # the standard deviation of Gaussian noise, added
+                        # to the output - y.
+    random_state=123)   # the seed-like integer for reproducibility
 
 print(X, "\n")
 print(y, "\n")
 
 # reshape?
 if (y.ndim == 1):
-    y = y.reshape(-1, 1)
+    y = y.reshape(-1, 1) # ?
 
 # plot the points
 plt.figure(figsize=(14,8))
